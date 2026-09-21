@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.invalid/ontologies/ont.owl#"
+     xml:base="http://example.invalid/ontologies/ont.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.invalid/ontologies/ont.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Вызывает -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Вызывает">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Функция"/>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Функция"/>
+        <rdfs:label xml:lang="ru">Вызывает</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Имеет_метод -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Имеет_метод">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Класс_кода"/>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Функция"/>
+        <rdfs:label xml:lang="ru">Имеет_метод</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Импортирует -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Импортирует">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Библиотека"/>
+        <rdfs:label xml:lang="ru">Импортирует</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Содержит_класс -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Содержит_класс">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Класс_кода"/>
+        <rdfs:label xml:lang="ru">Содержит_класс</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Содержит_модуль -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Содержит_модуль">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.invalid/ontologies/ont.owl#Библиотека"/>
+                    <rdf:Description rdf:about="http://example.invalid/ontologies/ont.owl#Программный_проект"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <rdfs:label xml:lang="ru">Содержит_модуль</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Содержит_функцию -->
+
+    <owl:ObjectProperty rdf:about="http://example.invalid/ontologies/ont.owl#Содержит_функцию">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <rdfs:range rdf:resource="http://example.invalid/ontologies/ont.owl#Функция"/>
+        <rdfs:label xml:lang="ru">Содержит_функцию</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#имеет_название -->
+
+    <owl:DatatypeProperty rdf:about="http://example.invalid/ontologies/ont.owl#имеет_название">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Элемент_проекта"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">имеет_название</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#расширение_файла -->
+
+    <owl:DatatypeProperty rdf:about="http://example.invalid/ontologies/ont.owl#расширение_файла">
+        <rdfs:domain rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">расширение файла</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Библиотека -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Библиотека">
+        <rdfs:subClassOf rdf:resource="http://example.invalid/ontologies/ont.owl#Элемент_проекта"/>
+        <rdfs:label xml:lang="ru">Библиотека</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Класс_кода -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Класс_кода">
+        <rdfs:subClassOf rdf:resource="http://example.invalid/ontologies/ont.owl#Элемент_проекта"/>
+        <rdfs:label xml:lang="ru">Класс_кода</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Модуль -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Модуль">
+        <rdfs:subClassOf rdf:resource="http://example.invalid/ontologies/ont.owl#Элемент_проекта"/>
+        <rdfs:label xml:lang="ru">Модуль</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Программный_проект -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Программный_проект">
+        <rdfs:label xml:lang="ru">Программный_проект</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Функция -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Функция">
+        <rdfs:subClassOf rdf:resource="http://example.invalid/ontologies/ont.owl#Элемент_проекта"/>
+        <rdfs:label xml:lang="ru">Функция</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Элемент_проекта -->
+
+    <owl:Class rdf:about="http://example.invalid/ontologies/ont.owl#Элемент_проекта">
+        <rdfs:label xml:lang="ru">Элемент_проекта</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#AdminAccount -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#AdminAccount">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Класс_кода"/>
+        <rdfs:label xml:lang="ru">AdminAccount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#DatabaseConnection -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#DatabaseConnection">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Класс_кода"/>
+        <Имеет_метод rdf:resource="http://example.invalid/ontologies/ont.owl#connect_to_db"/>
+        <rdfs:label xml:lang="ru">DatabaseConnection</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Prisma_ORM -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#Prisma_ORM">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Библиотека"/>
+        <имеет_название>Prisma Object-Relational Mapping</имеет_название>
+        <rdfs:label xml:lang="ru">Prisma_ORM</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#UserAccount -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#UserAccount">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Класс_кода"/>
+        <rdfs:label xml:lang="ru">UserAccount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#connect_to_db -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#connect_to_db">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Функция"/>
+        <rdfs:label xml:lang="ru">connect_to_db</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#database_py -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#database_py">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <Импортирует rdf:resource="http://example.invalid/ontologies/ont.owl#Prisma_ORM"/>
+        <Содержит_класс rdf:resource="http://example.invalid/ontologies/ont.owl#DatabaseConnection"/>
+        <расширение_файла>.py</расширение_файла>
+        <rdfs:label xml:lang="ru">database_py</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#orders_py -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#orders_py">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <расширение_файла>.py</расширение_файла>
+        <rdfs:label xml:lang="ru">orders_py</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#users_js -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#users_js">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Модуль"/>
+        <Содержит_класс rdf:resource="http://example.invalid/ontologies/ont.owl#AdminAccount"/>
+        <Содержит_класс rdf:resource="http://example.invalid/ontologies/ont.owl#UserAccount"/>
+        <расширение_файла>.js</расширение_файла>
+        <rdfs:label xml:lang="ru">users_js</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.invalid/ontologies/ont.owl#Интернет_магазин -->
+
+    <owl:NamedIndividual rdf:about="http://example.invalid/ontologies/ont.owl#Интернет_магазин">
+        <rdf:type rdf:resource="http://example.invalid/ontologies/ont.owl#Программный_проект"/>
+        <Содержит_модуль rdf:resource="http://example.invalid/ontologies/ont.owl#database_py"/>
+        <Содержит_модуль rdf:resource="http://example.invalid/ontologies/ont.owl#orders_py"/>
+        <Содержит_модуль rdf:resource="http://example.invalid/ontologies/ont.owl#users_js"/>
+        <rdfs:label xml:lang="ru">Интернет_магазин</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
