@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/shop#"
+     xml:base="http://www.semanticweb.org/ontologies/shop"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/shop"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#купил -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/shop#купил">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#произведен_брендом -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/shop#произведен_брендом">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/shop#произвел_товар"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#произвел_товар -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/shop#произвел_товар">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#рекомендован_вместе_с -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/shop#рекомендован_вместе_с">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#является_клиентом_бренда -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/shop#является_клиентом_бренда">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#год_выпуска -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/shop#год_выпуска">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#имеет_цену -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/shop#имеет_цену">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#имя_покупателя -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/shop#имя_покупателя">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Бренд -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Ноутбук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Ноутбук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Покупатель -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Премиум_Товар -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Премиум_Товар">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Смартфон -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Смартфон">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Товар -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/shop#Товар"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Apple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#Apple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+        <произвел_товар rdf:resource="http://www.semanticweb.org/ontologies/shop#MacBook_Air"/>
+        <произвел_товар rdf:resource="http://www.semanticweb.org/ontologies/shop#iPhone_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Galaxy_S24 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#Galaxy_S24">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Смартфон"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <произведен_брендом rdf:resource="http://www.semanticweb.org/ontologies/shop#Samsung"/>
+        <имеет_цену rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75000</имеет_цену>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#MacBook_Air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#MacBook_Air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Ноутбук"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Премиум_Товар"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <произведен_брендом rdf:resource="http://www.semanticweb.org/ontologies/shop#Apple"/>
+        <имеет_цену rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110000</имеет_цену>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Samsung -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#Samsung">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Бренд"/>
+        <произвел_товар rdf:resource="http://www.semanticweb.org/ontologies/shop#Galaxy_S24"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#ThinkPad_X1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#ThinkPad_X1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Ноутбук"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Премиум_Товар"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <имеет_цену rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150000</имеет_цену>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#iPhone_15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#iPhone_15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Премиум_Товар"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Смартфон"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+        <произведен_брендом rdf:resource="http://www.semanticweb.org/ontologies/shop#Apple"/>
+        <рекомендован_вместе_с rdf:resource="http://www.semanticweb.org/ontologies/shop#MacBook_Air"/>
+        <имеет_цену rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85000</имеет_цену>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Клиент_Алексей -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#Клиент_Алексей">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+        <купил rdf:resource="http://www.semanticweb.org/ontologies/shop#iPhone_15"/>
+        <является_клиентом_бренда rdf:resource="http://www.semanticweb.org/ontologies/shop#Apple"/>
+        <имя_покупателя>Алексей</имя_покупателя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/shop#Клиент_Мария -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/shop#Клиент_Мария">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+        <купил rdf:resource="http://www.semanticweb.org/ontologies/shop#Galaxy_S24"/>
+        <является_клиентом_бренда rdf:resource="http://www.semanticweb.org/ontologies/shop#Samsung"/>
+        <имя_покупателя>Мария</имя_покупателя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/shop#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/shop#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/shop#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/shop#price">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#Покупатель"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#купил"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#u"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#произведен_брендом"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ontologies/shop#b"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#является_клиентом_бренда"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#u"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ontologies/shop#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#Товар"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#имеет_цену"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ontologies/shop#price"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/ontologies/shop#price"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80000</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/shop#Премиум_Товар"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ontologies/shop#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
